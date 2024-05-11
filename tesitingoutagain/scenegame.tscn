@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1duouh5k3ixq"]
+[gd_scene load_steps=10 format=3 uid="uid://d1duouh5k3ixq"]
 
 [ext_resource type="Texture2D" uid="uid://fh21156ok2gv" path="res://bg.png" id="1_aoddl"]
 [ext_resource type="Script" path="res://scenegame.gd" id="1_uwsae"]
 [ext_resource type="Script" path="res://star1.gd" id="2_bfxra"]
 [ext_resource type="Texture2D" uid="uid://cwsr5qfbepd6p" path="res://whitecircle.png" id="2_w5vel"]
 [ext_resource type="Script" path="res://s1area.gd" id="4_o0vbq"]
+[ext_resource type="Texture2D" uid="uid://d11kchgp7w53s" path="res://blackcircle.png" id="6_0spra"]
 [ext_resource type="Script" path="res://s1hArea.gd" id="6_dotyb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h32bg"]
@@ -16,12 +17,13 @@ radius = 0.1
 script = ExtResource("1_uwsae")
 
 [node name="Screenshot2024-05-10At9_34_28Am" type="Sprite2D" parent="."]
-position = Vector2(580, 338)
+position = Vector2(576, 327)
 scale = Vector2(1.16227, 1.17329)
 texture = ExtResource("1_aoddl")
 
 [node name="star1" type="Sprite2D" parent="."]
-position = Vector2(403, 214)
+z_index = 1
+position = Vector2(563, 327)
 texture = ExtResource("2_w5vel")
 script = ExtResource("2_bfxra")
 
@@ -39,7 +41,7 @@ offset_left = 191.0
 offset_top = 151.0
 offset_right = 231.0
 offset_bottom = 191.0
-texture = ExtResource("2_w5vel")
+texture = ExtResource("6_0spra")
 
 [node name="s1hArea" type="Area2D" parent="star1hole"]
 position = Vector2(21, 20)
