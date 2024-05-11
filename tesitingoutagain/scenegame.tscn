@@ -1,17 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1duouh5k3ixq"]
+[gd_scene load_steps=9 format=3 uid="uid://d1duouh5k3ixq"]
 
 [ext_resource type="Texture2D" uid="uid://fh21156ok2gv" path="res://bg.png" id="1_aoddl"]
+[ext_resource type="Script" path="res://scenegame.gd" id="1_uwsae"]
 [ext_resource type="Script" path="res://star1.gd" id="2_bfxra"]
 [ext_resource type="Texture2D" uid="uid://cwsr5qfbepd6p" path="res://whitecircle.png" id="2_w5vel"]
 [ext_resource type="Script" path="res://s1area.gd" id="4_o0vbq"]
+[ext_resource type="Script" path="res://s1hArea.gd" id="6_dotyb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h32bg"]
 radius = 0.43
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hiud"]
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_uwsae")
 
 [node name="Screenshot2024-05-10At9_34_28Am" type="Sprite2D" parent="."]
-position = Vector2(573, 332)
+position = Vector2(580, 338)
 scale = Vector2(1.16227, 1.17329)
 texture = ExtResource("1_aoddl")
 
@@ -28,6 +33,20 @@ script = ExtResource("4_o0vbq")
 [node name="s1collision" type="CollisionShape2D" parent="star1/s1area"]
 position = Vector2(5.96046e-08, 2.98023e-08)
 shape = SubResource("CircleShape2D_h32bg")
+
+[node name="star1hole" type="TextureRect" parent="."]
+offset_left = 191.0
+offset_top = 151.0
+offset_right = 231.0
+offset_bottom = 191.0
+texture = ExtResource("2_w5vel")
+
+[node name="s1hArea" type="Area2D" parent="star1hole"]
+position = Vector2(21, 20)
+script = ExtResource("6_dotyb")
+
+[node name="s1hCollision" type="CollisionShape2D" parent="star1hole/s1hArea"]
+shape = SubResource("CircleShape2D_3hiud")
 
 [connection signal="mouse_entered" from="star1/s1area" to="star1" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="star1/s1area" to="star1" method="_on_area_2d_mouse_exited"]
