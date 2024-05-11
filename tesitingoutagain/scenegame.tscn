@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://s1hArea.gd" id="6_dotyb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h32bg"]
-radius = 0.43
+radius = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3hiud"]
 
@@ -26,12 +26,12 @@ texture = ExtResource("2_w5vel")
 script = ExtResource("2_bfxra")
 
 [node name="s1area" type="Area2D" parent="star1"]
-position = Vector2(0, 1)
+position = Vector2(0, -1)
 scale = Vector2(100, 100)
 script = ExtResource("4_o0vbq")
 
 [node name="s1collision" type="CollisionShape2D" parent="star1/s1area"]
-position = Vector2(5.96046e-08, 2.98023e-08)
+position = Vector2(5.96046e-08, 0.01)
 shape = SubResource("CircleShape2D_h32bg")
 
 [node name="star1hole" type="TextureRect" parent="."]
@@ -48,5 +48,5 @@ script = ExtResource("6_dotyb")
 [node name="s1hCollision" type="CollisionShape2D" parent="star1hole/s1hArea"]
 shape = SubResource("CircleShape2D_3hiud")
 
-[connection signal="mouse_entered" from="star1/s1area" to="star1" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="star1/s1area" to="star1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="star1/s1area" to="star1/s1area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="star1/s1area" to="star1/s1area" method="_on_mouse_exited"]

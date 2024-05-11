@@ -13,10 +13,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-func _input(event):
 	var s1d = s1area.dragging
 	if overlaps_area(s1area) and s1d == false:
 		get_parent().set_texture(imgtexture)
-	
